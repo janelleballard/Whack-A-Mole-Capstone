@@ -15,7 +15,7 @@ let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
 
-startButton.addEventListener("click", startGame,startTimer);
+startButton.addEventListener("click", startGame);
 /**
  * Generates a random integer within a range.
  *
