@@ -1,0 +1,113 @@
+html {
+  /*background: url('./assets/background.png') no-repeat center center fixed;*/
+  background: url('/assets/WAM\ Janelles\ Arcade\ .png.png') no-repeat center center fixed;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:0;
+  cursor: url('../assets/mallet.png'),url('../assets/hit.mp3'),auto; 
+  /*overflow: hidden;*/
+}
+
+.container {
+  height: 90vh;
+  width: 80vw;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+
+
+.body {
+  cursor: url('../assets/mallet.png'),('../assets/hit.mp3'),auto;
+  
+}
+
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  -webkit-text-stroke: 1px black;
+}
+
+#start {
+    text-align: center;
+    font-size: 30px;
+}
+
+button {  
+  width: 10rem;
+  padding: 1px 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none, black;
+  background-color: brown;
+
+}
+
+#time {
+    color: white;
+}
+
+.grid {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: absolute;
+  bottom:68px;
+  left:  43%;
+}
+
+.hole {
+  flex-basis: 33.3%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hole:after {
+  display: block;
+  /*background: url("./assets/hole.png") bottom center no-repeat;*/
+  background: url("https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/hole.png?raw=true") bottom center no-repeat;
+  background-size:contain;
+  content:'';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -40%;
+  z-index: 2;
+  pointer-events:none;
+}
+
+.mole {
+  /*background:url('./assets/mole.png') bottom center no-repeat;*/
+  background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
+  background-size: 15%;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  /*transition: transform 0.5s;*/
+  transition: all .4s ease;
+  pointer-events:auto;
+}
+
+.hole.show .mole {
+  top: 0;
+  /*transform: scale(1.1);*/
+}
