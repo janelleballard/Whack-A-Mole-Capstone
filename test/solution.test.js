@@ -65,7 +65,7 @@ describe("US-01: Basic Game Structure", () => {
 
   it("has a 'timer' <span id='timer'>0</span>", async () => {
     const timer = await page.evaluate(() => {
-      const timer = document.querySelectorAll("#timer");
+      const timer = document.querySelectorAll("#time");
       return timer.length;
      });
     expect(timer).not.toBeNull();
@@ -293,7 +293,7 @@ describe("US-05: startTimer() and updateTimer()", () => {
     });
     await page.waitForTimeout(1000);
     const time = await page.evaluate(() => {
-      return document.querySelector("#timer").innerHTML;
+      return document.querySelector("#time").innerHTML;
     });
     expect(Number(time)).toBeGreaterThan(0);
   });

@@ -26,7 +26,7 @@ startButton.addEventListener("click", startGame,startTimer);
  *
  */
 function randomInteger(min, max) {
- return Math.round(Math.random() * (max - min) + min);
+ return Math.floor(Math.random() * (max - min) + min);
 
 }
   /**
@@ -154,10 +154,12 @@ function showAndHide(hole, delay){
 *
 */
 function toggleVisibility(hole){
-  // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
+ // TODO: add hole.classList.toggle so that it adds or removes the 'show' class.
   hole.classList.toggle('show');
   return hole;
+  
 }
+
 
 /**
 *
@@ -200,8 +202,8 @@ function clearScore() {
 function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
-  if (time > 0) {
-    time -= 1;
+ if (time > 0) {
+    time--;
     timerDisplay.textContent = time;
   }
   return time;
