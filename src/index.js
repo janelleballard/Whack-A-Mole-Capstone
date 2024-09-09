@@ -6,6 +6,7 @@ const startButton = document.querySelector('#start');
 const scoreBoard = document.querySelector('#score');// Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#time');// use querySelector() to get the timer element.
 const cursor = document.querySelectorAll('.cursor')
+let timeInterval;
 
 
 let timeUp = false;
@@ -204,7 +205,7 @@ function updateTimer() {
   // hint: this code is provided to you in the instructions.
  if (time > 0) {
     time--;
-    timerDisplay.textContent = time;
+    timerDisplay.textContent = `Time Left: ${time}`;
   }
   return time;
 }
@@ -217,8 +218,9 @@ function updateTimer() {
 */
 function startTimer() {
   // TODO: Write your code here
-   time = setInterval(updateTimer,1000);
-  return time;
+
+   timeInterval = setInterval(updateTimer,1000);
+  return timeInterval;
 }
 
 /**
