@@ -1,4 +1,4 @@
-
+const music = document.getElementById('backgroundMusic');
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
@@ -7,6 +7,7 @@ const scoreBoard = document.querySelector('#score');// Use querySelector() to ge
 const timerDisplay = document.querySelector('#time');// use querySelector() to get the timer element.
 const cursor = document.querySelectorAll('.cursor')
 let timeInterval;
+
 
 
 let timeUp = false;
