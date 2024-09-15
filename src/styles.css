@@ -70,12 +70,13 @@ button {
   flex-wrap: wrap;
   margin: 0 auto;
   position: absolute;
-  bottom:68px;
+  bottom: 205px;
   left:  43%;
 }
 
 .hole {
   flex-basis: 33.3%;
+  height: 70px;
   overflow: hidden;
   position: relative;
 }
@@ -97,7 +98,7 @@ button {
 .mole {
   /*background:url('./assets/mole.png') bottom center no-repeat;*/
   background:url('https://github.com/Thinkful-Ed/js-dev-final-capstone-starter/blob/main/assets/mole.png?raw=true') bottom center no-repeat;
-  background-size: 15%;
+  background-size: 25%;
   position: absolute;
   top: 100%;
   width: 100%;
