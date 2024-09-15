@@ -177,10 +177,10 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
-  if (points < 0) {
+  //if (points < 0) 
   points += 1;
-  score.textContent = `Your Score: ${points}`;
-  }
+  score.textContent = `You Score: ${score}`;
+  
 return points;
 }
 
@@ -241,7 +241,7 @@ function whack(event) {
   console.log(score);
    
    console.log(scoreBoard);
-  scoreBoard.textContent = score;
+  scoreBoard.textContent = `You Score: ${score}`;
   whackSound.play();
  }
 
