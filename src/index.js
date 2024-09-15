@@ -1,4 +1,4 @@
-const music = document.getElementById('backgroundMusic');
+const music = document.querySelector('#backgroundMusic');
 const holes = document.querySelectorAll('.hole');
 const moles = document.querySelectorAll('.mole');
 const startButton = document.querySelector('#start');
@@ -6,6 +6,8 @@ const startButton = document.querySelector('#start');
 const scoreBoard = document.querySelector('#score');// Use querySelector() to get the score element
 const timerDisplay = document.querySelector('#time');// use querySelector() to get the timer element.
 const cursor = document.querySelectorAll('.cursor')
+const whackSound = document.querySelector('#whackSound');
+const gameOverMessage = document.querySelector('#gameOver');
 let timeInterval;
 
 
@@ -175,12 +177,12 @@ function toggleVisibility(hole){
 */
 function updateScore() {
   // TODO: Write your code here
+  if (points < 0) {
   points += 1;
-  score.textContent = points;
-  return points;
+  score.textContent = `Your Score: ${points}`;
+  }
+return points;
 }
-
-
 
 /**
 *
@@ -240,6 +242,7 @@ function whack(event) {
    
    console.log(scoreBoard);
   scoreBoard.textContent = score;
+  whackSound.play();
  }
 
 /**
@@ -282,6 +285,12 @@ function gameOver() {
   }
 }
 
+function stopGame(){
+  clearInterval(timeInterval);
+  gameOverMessage.textContent = '';
+  return "game stopped";
+}
+
 /**
 *
 * This is the function that starts the game when the `startButton`
@@ -289,6 +298,7 @@ function gameOver() {
 *
 */
 function startGame(){
+  music.play();
   setEventListeners();
   setDuration(60);
   showUp();

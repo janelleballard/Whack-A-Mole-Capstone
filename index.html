@@ -10,16 +10,18 @@
     
   </head>
   <body>
-    <audio id="backgroundMusic" src=../assets/hit.mp3></audio>
+    <audio id="backgroundMusic" src='assets/molesong.mp3' loop></audio>
+    <audio id="whackSound" src='assets/hit.mp3'></audio>
      <div class="container">
         <div class="main">
           <h1 class="title">Whack-A-Mole!!</h1>
       <div>
         <h2 id="score"> Your Score: 0</h2>
         <h2 id="time"> Time Left: 60</h2>
-        <h2>Click start to play!</h2>
+        <h2>Click <button id="start">start</button> to play!</h2>
+        <p id="gameOverMessage"></p>
       </div>
-       <button id="start">start</button>
+       
       </div>
 
     <div class="grid">
@@ -54,8 +56,7 @@
          <div id="hole8" class="hole">
            <div id="mole8" class="mole"></div>
             </div>
-         
-    </div>
+             </div>
     <script src="./src/index.js"></script>
   </body>
 </html>
