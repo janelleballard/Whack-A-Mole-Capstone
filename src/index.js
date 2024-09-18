@@ -7,7 +7,7 @@ const scoreBoard = document.querySelector('#score');// Use querySelector() to ge
 const timerDisplay = document.querySelector('#time');// use querySelector() to get the timer element.
 const cursor = document.querySelectorAll('.cursor')
 const whackSound = document.querySelector('#whackSound');
-const gameOverMessage = document.querySelector('#gameOver');
+const gameOverMessage = document.querySelector('#gameOverMessage');
 let timeInterval;
 
 
@@ -108,11 +108,12 @@ function chooseHole(holes) {
 function gameOver() {
   // TODO: Write your code here
   if (time > 0) {
- const timeoutId = showUp();
-  return timeoutId;}
+ /*const timeoutId = showUp();
+  return timeoutId;*/
+  }
    else {
    gameStopped = stopGame();
-  return gameStopped();
+    return gameStopped();
 
 }
 }
@@ -146,7 +147,7 @@ function showAndHide(hole, delay){
   const timeoutID = setTimeout(() => {
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
     toggleVisibility(hole);
-    gameOver();
+   /* gameOver();*/
   }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
   return timeoutID;
 }
@@ -194,7 +195,7 @@ return points;
 function clearScore() {
   // TODO: Write your code here
   points = 0;
-  score.textContent = points;
+  scoreBoard.textContent = `You Score: ${points}`;
   return points;
 }
 
@@ -207,10 +208,14 @@ function updateTimer() {
   // TODO: Write your code here.
   // hint: this code is provided to you in the instructions.
  if (time > 0) {
+  console.log(time)
+    showUp();
     time--;
     timerDisplay.textContent = `Time Left: ${time}`;
+    return time;
+  } else if(time == 0){
+    gameOver();
   }
-  return time;
 }
 
 /**
@@ -276,19 +281,25 @@ function setDuration(duration) {
 *
 */
 function gameOver() {
-  if(time > 0){
+/*  if(time > 0){
     let timeoutId = showUp();
     return timeoutId;
   } else {
     let gameStopped = stopGame();
     return gameStopped;
-  }
+  }*/
+ stopGame();
+
 }
 
 function stopGame(){
+  console.log("callling stop game")
+ 
+  music.pause();
+  music.currentTime = 0
   clearInterval(timeInterval);
-  gameOverMessage.textContent = '';
-  return "game stopped";
+  gameOverMessage.textContent = 'Game Stopped';
+  /*return "game stopped";*/
 }
 
 /**
@@ -298,12 +309,13 @@ function stopGame(){
 *
 */
 function startGame(){
+  clearScore();
   music.play();
   setEventListeners();
-  setDuration(60);
+  setDuration(10);
   showUp();
   startTimer()
-  showUp()
+  //showUp()
   return "game started";
 }
 

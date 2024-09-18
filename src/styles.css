@@ -112,3 +112,7 @@ button {
   top: 0;
   /*transform: scale(1.1);*/
 }
+
+#gameOverMessage {
+  font-size: 30px;
+}
