@@ -293,13 +293,13 @@ function gameOver() {
 }
 
 function stopGame(){
-  console.log("callling stop game")
+  console.log("calling stop game")
  
   music.pause();
   music.currentTime = 0
   clearInterval(timeInterval);
   gameOverMessage.textContent = 'Game Stopped';
-  /*return "game stopped";*/
+  //return "game stopped";
 }
 
 /**
@@ -312,7 +312,7 @@ function startGame(){
   clearScore();
   music.play();
   setEventListeners();
-  setDuration(10);
+  setDuration(60);
   showUp();
   startTimer()
   //showUp()
