@@ -309,6 +309,7 @@ function stopGame(){
 *
 */
 function startGame(){
+  gameOverMessage.textContent ="";
   clearScore();
   music.play();
   setEventListeners();
